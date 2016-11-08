@@ -1,0 +1,66 @@
+# git log
+
+Shows a history of commits made. It shows the commit ID, the author,
+and the date along with some notes that have been added to this commit.
+--stat: the use of this flag gives some additional information about what
+files changed at the commits
+
+# git diff $ID1 $ID2
+
+Compares to commits and highlights the changes made in between
+
+# git clone $URL
+
+Downloads the whole repository that means files and also the history to the
+local machine. Now the repository can be used offline and can be worked with.
+
+# git config --global color.ui auto
+
+Sets settings so that using git diff will color code the changes made.
+
+# git checkout $ID
+
+This command checks out the version of the repository defined by the ID. This 
+is helpful in learning whether a bug was present in previous versions as well.
+
+# git config --global core.editor "'C:/Program Files (x86)/Notepad++/notepad++.exe' -multiInst -notabbar -nosession -noPlugin"
+
+This command will set notepad++ as my favorite editor for git. The --global means
+that this setting is applied on all my git repositories. The flag -n means that it 
+will open the editor in a new window while -w means that it waits to close the editor 
+before continuing. This editor will run as soon as the "git commit" command is run and
+will be ready to take the git commit message.
+
+# git config --global merge.conflictstyle diff3
+
+
+
+# git config --global push.default upstream
+
+
+
+# git init
+
+This command will create a git repository it can also be used on a directory that already
+exists. This command will add the hidden ".git"-directory so that it tracks what changes 
+from that point in time on. At first there exists no commit.
+
+# git status
+
+Shows which files have changed since the last commit and shows some information to the current
+repository.
+
+# git add $FILE
+
+Adds the file to the staging area which is a area before the commit. By allowing this the user 
+has more control over which files should be commited and not every commit takes all current files. 
+
+# git commit
+
+This command will commit the files that are currently in the staging area. It will open the editor 
+specified and take its input as commit message. The message can also be written by adding '-m "$COMMENT"'
+The link below gives some best pracice on how to write a commit message: 
+http://udacity.github.io/git-styleguide/
+$Type: $Subject
+$Body
+$Footer
