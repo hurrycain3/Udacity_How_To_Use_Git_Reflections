@@ -1,0 +1,31 @@
+#1 What is UNIX?
+
+Unix is a operating system that comes in different types. These different types share common similarities.
+The most popular varieties are Sun Solaris, GNU/Linux, and MacOS X.
+
+#2 What parts does UNIX have?
+
+The UNIX operating system is made up of three parts: the kernel, the shell and the programs.
+
+#3 What is the kernel?
+
+The kernel is the core of the operating system. It allocates time and memory to programs and handles the filestore and
+communications in response to system calls.
+
+#4 What is the shell?
+
+The sehll is the interface between the user and the kernel. It is a command line interpreter (CLI). It interpretes the
+commands typed in and arranges them to be carried out. The commands are themselves programs. The user can customise his
+shell and can use differentshells on the same machine.
+
+#5 How do the kernel and the shell work together?
+
+If a user types in a command the shell searches the filestore for the file containing the program and then requests the kernel
+through system calls to execute the program. When the process has finished running the shell returns the UNIX prompt % indicating
+that it is waiting for further commands.
+
+#6 What else to know?
+
+In UNIX everything is either a file or a process. A file is an executing program identified by a unique PID (process identifier).
+A file is a collection of data, e.g. a document, text of a program written in a programming language, a collection of binary digits
+(an executable or binary file), or directories.

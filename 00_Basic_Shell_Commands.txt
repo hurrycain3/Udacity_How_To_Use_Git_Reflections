@@ -1,0 +1,62 @@
+# What does a command look like?
+
+E.g. ls -l ~/Desktop: in that case ls is a utility, -l is a flag and ~/Desktop is the argument.
+
+###############################################################################################
+
+BASIC COMMANDS/UTILITIES
+
+###############################################################################################
+
+# man $UTIL
+
+manual
+Get information for how to use the utility $UTIL. Press Q to get back to the command line
+
+# ls $DIR
+
+list
+Lists the contents of the directory $DIR.
+-a: Will show hidden files and directories as well.
+
+# cd $DIR
+
+change directory
+Changes the current working directory to the directory $DIR.
+
+# pwd
+
+print working directory
+Gives back where you currently are.
+
+# less $FILE
+
+Displays the contents of the file $FILE. Press Q to quit and go back to the command line.
+
+# cp $FILE  $LOCATION
+
+copy
+Copies the file $FILE to the location $LOCATION.
+
+# mv $FILE $LOCATION
+
+move
+Moves the file $FILE to the location $LOCATION.
+
+# rm $FILE
+
+remove
+Deletes a file permanently. There is no way to get it back.
+
+# sudo $CMD
+
+super user do
+Performs a command with elevated permissions.
+
+###############################################################################################
+
+EDIT PATH VARIABLE TO START PROGRAM FROM SHELL
+
+###############################################################################################
+
+echo 'alias notepad++="c:/Program\ Files\ \(x86\)/Notepad++/notepad++.exe"' >> ~/.bashrc
