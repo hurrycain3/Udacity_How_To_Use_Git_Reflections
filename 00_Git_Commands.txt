@@ -4,10 +4,22 @@ Shows a history of commits made. It shows the commit ID, the author,
 and the date along with some notes that have been added to this commit.
 --stat: the use of this flag gives some additional information about what
 files changed at the commits
+--graph $BRANCH1 $BRANCH2 ...: visualizes different branches
+--oneline: shortens the branch visualization
 
 # git diff $ID1 $ID2
 
-Compares to commits and highlights the changes made in between
+Compares to commits and highlights the changes made in between. If git diff
+is used without any further arguments it compares the files in the working 
+directory with the files in the staging area.  
+--staged: If this is used instead of commit IDs it will compare the staging area
+with the latest commit. This way one can make sure that only wanted changes are commited.
+
+# git reset --hard
+
+This command resets current changes in the working directory. They are overwritten
+by the latest commit and cannot be restored as they have never been commited. This is 
+why this command should be used very carefully.
 
 # git clone $URL
 
@@ -21,7 +33,16 @@ Sets settings so that using git diff will color code the changes made.
 # git checkout $ID
 
 This command checks out the version of the repository defined by the ID. This 
-is helpful in learning whether a bug was present in previous versions as well.
+is helpful in learning whether a bug was present in previous versions as well. 
+If the command is run with "master" or any other branch name as argument then 
+the given branch will be checked out. Master is always the latest commit of the 
+main branch. When committing only the branch that is currently selected will be
+affected by that commit.
+-b $BRANCH_NAME: This command will create a new branch and check this branch out.
+It can be used if a old commit is checked out and a new commit is created based 
+on that. Because each commit stores information about its parent commit this new
+commit will be unreachable after checking out another branch so it makes sense
+to create a branch here.
 
 # git config --global core.editor "'C:/Program Files (x86)/Notepad++/notepad++.exe' -multiInst -notabbar -nosession -noPlugin"
 
@@ -38,6 +59,10 @@ will be ready to take the git commit message.
 # git config --global push.default upstream
 
 
+
+# git config --global core.autocrlf true
+
+To fix the difference between UNIX new line "\n" and Windows newline "\r\n".
 
 # git init
 
@@ -64,3 +89,39 @@ http://udacity.github.io/git-styleguide/
 $Type: $Subject
 $Body
 $Footer
+
+# git branch $BRANCH_NAME
+
+This command will create a new branch with the given name or if used without any argument it will show the
+names of all current branches. The asterisk shows which branch is currently selected.
+-d $BRANCH_NAME: Deletes the branch label not the commits in the branch
+
+# git gc
+
+This command runs the garbage collection and will delete commits that are not accessible from any existing branches.
+
+# git merge $BRANCH1 $BRANCH2
+
+This command merges $BRANCH2 into $BRANCH1. If another branch is checked out at that time the checked out branch will
+also be included in the merge. Therefore always check out one of the two branches you want to merge. Which one to check
+out depends on which label you want to keep.
+In case of a merge conflict:
+--abort: Restores the state before the merge running was started.
+
+# git show $ID
+
+This command shows the difference between a commit and its parent. This is helpful as merging two branches will 
+interleave the commits and the commit below is not necessarily the parent of the current commit.
+
+# git remote
+
+-v: List your existing remotes (remote repositories)
+add $REMOTE_NAME $URL: This command adds a new remote repository to the current local repository. If there is only one
+remote it is best practice to name it origin.
+
+# git push $REMOTE_NAME $BRANCH_NAME
+
+This command copies all the commits reachable from $BRANCH_NAME to the remote repository.
+
+# git pull $BRANCH_NAME
+
