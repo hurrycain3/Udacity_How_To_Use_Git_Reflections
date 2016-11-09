@@ -53,10 +53,23 @@ Deletes a file permanently. There is no way to get it back.
 super user do
 Performs a command with elevated permissions.
 
+# exit
+
+Logs out from the ssh connection. It is also possible to use CTRL-D.
+
+# curl $URL -o $FILE_NAME
+
+This command downloads files from the web and gives it the name that follows the -o flag.
+
+# uptime
+
+Gives information about the current time and how long the system is up. It also shows the 
+average tasks it had to do during that time and the users that are logged in.
+
 ###############################################################################################
 
 EDIT PATH VARIABLE TO START PROGRAM FROM SHELL
 
 ###############################################################################################
 
-echo 'alias notepad++="c:/Program\ Files\ \(x86\)/Notepad++/notepad++.exe"' >> ~/.bashrc
+echo 'alias npp="c:/Program\ Files\ \(x86\)/Notepad++/notepad++.exe"' >> ~/.bashrc
