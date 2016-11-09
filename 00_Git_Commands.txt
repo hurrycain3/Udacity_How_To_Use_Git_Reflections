@@ -95,6 +95,7 @@ $Footer
 This command will create a new branch with the given name or if used without any argument it will show the
 names of all current branches. The asterisk shows which branch is currently selected.
 -d $BRANCH_NAME: Deletes the branch label not the commits in the branch
+-a: Shows some information about the remote branches as well.
 
 # git gc
 
@@ -123,5 +124,13 @@ remote it is best practice to name it origin.
 
 This command copies all the commits reachable from $BRANCH_NAME to the remote repository.
 
-# git pull $BRANCH_NAME
+# git pull $REMOTE_NAME $BRANCH_NAME
 
+This command will update the local version of my repository branch to the version in my remote repository $BRANCH_NAME.
+It first fetches the latest verion of the remote repository and then merges my latest version with the latest version
+of the remote. 
+
+# git fetch $REMOTE_NAME $BRANCH_NAME
+
+Updates just the local copy of the remote branch e.g. origin/master. This means that the commits that were added to the 
+remote repository and the commits made on the local repository will be on two different branches then.
