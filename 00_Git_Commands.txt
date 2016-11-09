@@ -134,3 +134,18 @@ of the remote.
 
 Updates just the local copy of the remote branch e.g. origin/master. This means that the commits that were added to the 
 remote repository and the commits made on the local repository will be on two different branches then.
+
+########################################################################################################################
+
+SET UP SSH CONNECTION TO GITHUB
+
+########################################################################################################################
+
+#1 Ensure ssh-agent is enabled:
+eval "$(ssh-agent -s)"
+
+#2 Add your ssh key to the agent
+ssh-add ~/.ssh/$ID_NAME
+
+#3 Test your ssh connection
+ssh -T git@github.com
