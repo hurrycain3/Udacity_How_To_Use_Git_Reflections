@@ -26,16 +26,41 @@ in addition I can check the difference between the staging area files and the la
 #4 What are some situations when branches would be helpful in keeping your history
 organized? How would branches help?
 
-
+It would help to use branches if you want to work on experimental changes or a different language. 
+While it would be possible to do this with commits and checking out older and later version this would
+create a lot of overhead and things will get cluttered if new commits to the standard version are made.
+Branches help to keep that organized and let you work on a side track while it is still possible to go
+ahead with the main version. The branches can be matched at a later state. They are great for context
+switching, e.g. working on new features or switching to bug fixing. It is usually used to have a master 
+branch that always works and then have branches for development and for experimental features.
 
 #5 How do the diagrams help you visualize the branch structure?
 
-
+The diagram shows where the repository was split into different branches and what changes have been made
+on each brand as the commit messages are shown beside. One has to take care that for each branch there 
+actually exist a branch name because otherwise those commits are only reachable when checking out their
+commit ID otherwise the git log will just go along every parent commit starting from the current checkout.
 
 #6 What is the result of merging two branches together? Why do we represent it in
 the diagram the way we do?
 
+If we merge two files we should compare them between eachother and also with the original file. If there are
+lines of code similar in both files we definitley want them to be in the final file. If lines are removed in 
+one of the latest versions that are present in the original then it should be removed in the final version. If
+lines are added that are not in the original file we want them as well. The new commit will refer to both branches
+as parents and contains both versions of the code merged together usind the latest commit of each branch and 
+comparing them to the commit where both branches where split off. After the merge the label of the branch that was 
+merged into the other can be deleted as the commits are accessible from the merged branch. If it is deleted before
+the merge the commits would only be reachable over their ID and not at all after the git garbage collection ran. This
+happens from time to time or can be done manually by using "git gc". The order of the commits will be according to their
+timestamps. In the diagram it is represented that way as both branches become one single branch again.
 
-
-#7 What are the pros and cons of Gitâ€™s automatic merging vs. always doing merges
+#7 What are the pros and cons of Git's automatic merging vs. always doing merges
 manually?
+
+The automatic merging saves a lot of time because you dont have to manually merge every changes into one single file. 
+However, sometimes there are changes that are hard to resolve automatically and need a human supervisor to take care
+of it. This usually means that the people who made the changes should get together and work on resolving the merging 
+issue. Git merge takes two commits that should be merged and also compares them to the latest commit they both had in
+common. This way the automatic approach can check which changes should definitley make their way into the final file
+which definitley should not and which lines should be checked by humans again.
