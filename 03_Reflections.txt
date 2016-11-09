@@ -9,24 +9,52 @@ and for sharing code with the community.
 #2 Why might you want to always pull changes manually rather than having Git
 automatically stay up-to-date with your remote repository?
 
-    Fill in your answer here
+While someone else could have changed something in the remote repository, but I have done 
+some changes on my local repository I don't want them to be overwritten or discarded. The 
+advantage of doing it manually is that my work in progess won't be overwritten. Maybe you 
+are working in a different direction on your local machine so you don't want any of the new
+changes in your code. 
 
 #3 Describe the differences between forks, clones, and branches.  When would you
 use one instead of another?
 
-    Fill in your answer here
+A branch is a name tag put on a commit. If it is checked out every commit that is reachable 
+from that commit will be listed when using "git log" which means its parents and parents parents.
+Branches can be used to work on new features but keeping the main version of the code untouched 
+and running. Branches exist within a repository and there can be multiple branches on local 
+repositories as well as on remote ones. A lone is a copy of a repository and it doesn't matter
+whether it is copied from remote or to another location on the local machine. A fork is similar
+to a clone which means it gives a copy of an existing repository but refers to GitHub. This means
+if I want to copy someones GitHub repository to my account I will fork it. This keeps credits to
+the original author and allows me to commit changes what would not be possible if I tried to commit
+changes to his repository because I don't have permission to do so. There is no need to fork it as 
+I could also clone the repository to my local machine, set up a new remote to my GitHub and then push 
+it to my own GitHub repository but doing it with fork keeps track of the original author and gives 
+credit to her/him. 
 
 #4 What is the benefit of having a copy of the last known state of the remote
 stored locally?
 
-    Fill in your answer here
+The benefit is that I don't need to be online to make changes and to work on the project. I can do
+whatever I want to do offline and later merge the two states if something changed at the remote
+repository in the meantime. In addition, I can work on some features on my local machine and share
+them after I got them running.
 
 #5 How would you collaborate without using Git or GitHub?  What would be easier,
 and what would be harder?
 
-    Fill in your answer here
+Without Git or GitHub we would porbably use Dropbox or another similar tool. It is easier to use as one
+does not have to learn anything new at all. But on the other hand, it would complicate things as it will
+take a lot of effort to work on the same files at the same time or to go back and forth in different 
+versions of the code. 
 
 #6 When would you want to make changes in a separate branch rather than directly in
 master?  What benefits does each approach have?
 
-    Fill in your answer here
+The advantage of making changes in a serparate branch is that when you create a pull request to merge your
+changes into the master branch every other person who is currently working on the project gets a notification 
+and can check the changes. By doing so every one is up to date and knows what is happening within the project
+and directly sees what affects his or her own work. Tis is why the little more work heavy process of pulling 
+changes into my local master then merging my master into the branch I am working on and then pushing it to 
+the remote to get accepted via the pull request. The advantage of directly pushing and pulling to and from
+the master branch is the speed. It might be the better way if you work on your project alone.
